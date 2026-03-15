@@ -803,6 +803,12 @@ body.modal-open .navbar-custom .nav-link:hover {
   /* text-align: left; */
 }
 
+/* Playfair Display for vertical column text only (not the Bothams title) */
+.vertical-column .bar-blurb,
+.vertical-column .underline {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+}
 
 .bar-name {
   font-family: 'Playfair Display', serif;
