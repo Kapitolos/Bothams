@@ -1,0 +1,1138 @@
+body {
+  background-image: url(../public/images/6.png);
+  background-size: cover; /* Fill viewport on all devices (desktop, tablet, iPad) - no dead space */
+  background-position: center;
+  background-attachment: fixed; /* Ensures the image stays fixed as you scroll */
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Ensure body fills viewport so background has full area to cover */
+  color: #f0e5d8; /* Ensures all text is readable */
+}
+
+/* Prevent layout shift when modals open */
+body.modal-open {
+  overflow: hidden;
+  /* padding-right will be set by JavaScript to compensate for scrollbar width */
+}
+
+/* Ensure navbar maintains full width regardless of scrollbar */
+.navbar-custom {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Ensure navbar container doesn't shift */
+.navbar {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Prevent navbar toggler from getting margin-right when modals open */
+.navbar-toggler {
+  margin-right: 0 !important;
+}
+
+/* Ensure navbar brand and toggler don't shift when modals open */
+.navbar-brand,
+.navbar-toggler {
+  margin-right: 0 !important;
+}
+
+/* Prevent any margin changes on navbar elements when modal is open */
+body.modal-open .navbar-toggler,
+body.modal-open .navbar-brand {
+  margin-right: 0 !important;
+}
+
+/* Parallax Background */
+.hero-section {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-position 0.2s ease-in-out;
+}
+
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+/* Fade-in on Scroll */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(20px);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Hover Animation */
+.menu-select-overlay-col {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-select-overlay-col:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* navbar - same image as vertical column for consistent look */
+.bg-dark {
+  background-color: #2b2b2b;
+  background-image: url(../public/images/5.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  color: #f0e5d8;
+
+}
+.navbar-custom .nav-link {
+  color: #f0e5d8; /* Match the text color with the theme */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #f0e5d8;
+  transition: width 0.3s ease, left 0.3s ease;
+  pointer-events: none; /* Prevent interaction */
+}
+
+.navbar-custom .nav-link:hover {
+  color: #ffffff; /* Change color on hover for better visibility */
+}
+
+.navbar-custom .nav-link:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* Disable underline animation when modal is open to prevent layout shifts */
+body.modal-open .navbar-custom .nav-link::after {
+  display: none !important;
+}
+
+body.modal-open .navbar-custom .nav-link:hover::after {
+  display: none !important;
+}
+
+.navbar-custom .fab {
+  font-size: 1.2rem; /* Adjust the size of the social media icons */
+  margin-left: 15px; /* Add some space between icons */
+}
+
+/* Button or Link Hover Animation */
+.nav-link, .custom-close-button, button {
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover, .custom-close-button:hover, button:hover {
+  transform: scale(1.1);
+  color: #292303; /* Gold accent on hover */
+}
+
+/* Prevent hover scale effect on menu section buttons */
+.modal-body li .btn:hover,
+.modal-body li button:hover {
+  transform: none !important;
+  font-size: 1rem !important;
+}
+
+/* Prevent font size changes on menu item buttons when clicked */
+.modal-body li .btn:active,
+.modal-body li .btn:focus,
+.modal-body li button:active,
+.modal-body li button:focus {
+  font-size: 1rem !important;
+  transform: none !important;
+}
+
+
+/* Prevent nav-link transforms from affecting layout when modal is open */
+body.modal-open .navbar-custom .nav-link {
+  transform: none !important;
+  transition: none !important;
+}
+
+body.modal-open .navbar-custom .nav-link:hover {
+  transform: none !important;
+}
+
+/* Navbar Scroll Effect */
+.bg-dark {
+  transition: background-color 0.3s ease;
+}
+
+.bg-dark.scrolled {
+  background-color: rgba(43, 43, 43, 0.8); /* Darker with transparency */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow to give depth */
+}
+
+.App {
+  text-align: center;
+  animation: pageFadeIn 0.6s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.hero-section {
+  background-color: #f4f1e4; /* Cream-colored rustic background */
+  background-size: cover;
+  background-position: center;
+  height: 39vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Hero Section Fade-In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-section h1, .hero-section p {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.overlay-footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  width: 100%;
+  height: 100%; /* Ensures the content inside uses full height */
+}
+
+/* Menu select cards */
+.menu-select-overlay-col {
+  padding: 20px;
+  background-color: #2b2b2b; /* Dark chalkboard background */
+  background-image: url('../public/pizzafire.JPG'); /* Path to your chalk texture */
+  background-size: 100%; /* Ensure the image covers the entire area */
+  background-position: center;
+  background-attachment: fixed; /* Ensures the image stays fixed as you scroll */
+  background-blend-mode: multiply; /* Blend the image with the background color */
+  color: #f0e5d8; /* Off-white text */
+  border-radius: 10px;
+  /* color: #2b2b2b; */
+  max-width: 600px;
+  margin: -40px auto;
+  height: 30vh;
+  font-size: small;
+  margin-bottom: 8%;
+}
+
+.menu-select-overlay-col img {
+  border-radius: 10px;
+  width: 50%;
+  
+}
+
+.menu-select-overlay-col h2 {
+  font-size: medium;
+}
+
+.overlay-col {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f1e4;
+  padding: 10px;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  max-width: 300px;
+  color: #282c34;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.overlay-col:hover {
+  transform: translateY(-5px);
+}
+
+.overlay-col h2, .overlay-col p {
+  margin: 10px 0;
+}
+
+.overlay-col img,
+.overlay-col .img-fluid {
+  width: 100%;
+  height: 150px; /* Fixed height to prevent resize glitch */
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block; /* Removes inline spacing */
+}
+
+.overlay-col:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-col h2 {
+  font-family: 'Playfair Display', serif; /* Rustic, bold font */
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.overlay-col p {
+  font-family: "Cabin Sketch", sans-serif;
+  font-size: 1.2rem;
+  color: #2b2b2b;
+  margin-top: 10px;
+}
+.overlay-modal img {
+  width: 100%; /* Ensures the image fills the container width */
+  height: 200px; /* Fixed height to prevent resize glitch */
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+  border-radius: 5px; /* Adds rounded corners to the images */
+  display: block; /* Removes inline spacing */
+}
+
+.overlay-modal .modal-body {
+  padding: 20px; /* Adjust padding as needed */
+  padding-bottom: 40px; /* Add spacing at bottom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.overlay-modal h3 {
+  font-size: 1.5rem; /* Adjust as necessary */
+  color: black; /* Ensures the text is readable */
+  margin-bottom: 15px;
+}
+
+.overlay-modal p {
+  font-size: 1rem; /* Adjust as necessary */
+
+  margin-top: 10px;
+}
+
+.overlay-modal .menu-category {
+  margin-bottom: 20px; /* Space between categories */
+}
+
+
+.modal-content {
+  background-color: #3a2a2a; /* Darker background for better text contrast (halfway between original and very dark) */
+  background-image: url('../public/pizzafire.JPG'); /* Path to your chalk texture */
+  background-size: cover; /* Use cover instead of 100% to maintain aspect ratio */
+  background-position: center;
+  background-repeat: no-repeat; /* Prevent tiling */
+  background-blend-mode: multiply; /* Blend the image with the background color */
+  color: #f0e5d8; /* Off-white text */
+  font-family: "Tinos", serif;
+  padding: 20px;
+  border-radius: 10px; /* Add a bit of rounding for a polished look */
+  max-width: 90%; /* Adjust the width to make it slightly smaller */
+  margin: 0 auto; /* Center the modal */
+  min-height: 400px; /* Fixed minimum height to prevent size changes */
+  animation: modalFadeIn 0.2s ease-out;
+  position: relative; /* For overlay positioning */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* Menu modal specific styling - cream background, black text, no background image */
+.menu-modal .modal-content {
+  background-color: #faf8f3; /* Cream background */
+  background-image: none; /* Remove background image */
+  color: #000000; /* Black text */
+  font-family: "Tinos", serif;
+  border: 2px solid #e8e4d9; /* Elegant subtle border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.menu-modal .modal-content::before {
+  display: none; /* Remove overlay */
+}
+
+.menu-modal .custom-close-button {
+  color: #000000; /* Black close button */
+}
+
+.menu-modal .custom-close-button:hover {
+  color: #333333; /* Darker on hover */
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-modal .modal-body li .btn,
+.menu-modal .modal-body li button {
+  color: #000000 !important; /* Black text for menu items */
+}
+
+.menu-modal .modal-body .text-center {
+  color: #000000 !important; /* Black text for descriptions */
+}
+
+.menu-modal .nav-tabs .nav-link {
+  color: #000000 !important; /* Black text for tabs */
+}
+
+.menu-modal .nav-tabs .nav-link.active {
+  color: #000000 !important; /* Black text for active tab */
+}
+
+.menu-modal .modal-body::-webkit-scrollbar-thumb {
+  background-color: #666666; /* Darker scrollbar for white background */
+}
+
+.menu-modal .modal-body::-webkit-scrollbar-thumb:hover {
+  background-color: #333333; /* Darker on hover */
+}
+
+.menu-modal .modal-body::-webkit-scrollbar-button {
+  background-color: #666666; /* Darker scrollbar for white background */
+}
+
+.menu-modal .modal-body::-webkit-scrollbar-button:hover {
+  background-color: #333333; /* Darker on hover */
+}
+
+.menu-modal .modal-body {
+  scrollbar-color: #666666 transparent; /* Firefox scrollbar */
+}
+
+/* Add dark overlay to further darken the background */
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2); /* Dark overlay - reduced to 20% black (half strength) */
+  border-radius: 10px; /* Match modal border radius */
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: 0;
+}
+
+/* Ensure content is above the overlay */
+.modal-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* .modal-header {
+  
+   margin-top: -60px;
+   margin-bottom: -64px;
+} */
+
+.modal-header, .modal-footer {
+  border: none; /* Remove default Bootstrap borders */
+  padding-bottom: 10px; /* Reduce space below header */
+  /* min-height: 473px; */
+}
+
+.modal-body {
+  font-size: 1rem; /* Slightly smaller font size */
+  line-height: 1.5; /* Comfortable line spacing */
+  min-height: 500px; /* Minimum height to ensure content fits */
+  max-height: 70vh; /* Maximum height based on viewport */
+  overflow-y: auto; /* Allow scrolling if content exceeds height */
+  padding-bottom: 40px; /* Add spacing at bottom before scrolling */
+  padding-top: 15px; /* Reduce top padding to bring content up */
+}
+
+/* Ensure menu items have proper spacing from bottom of container */
+.modal-body .container {
+  padding-bottom: 30px;
+}
+
+/* Custom scrollbar styling for modal body */
+.modal-body::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: transparent; /* Transparent background */
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background-color: #f0e5d8; /* Match menu text color */
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff; /* Slightly brighter on hover */
+}
+
+.modal-body::-webkit-scrollbar-button {
+  background-color: #f0e5d8; /* Match menu text color for arrows */
+  border: none;
+}
+
+.modal-body::-webkit-scrollbar-button:hover {
+  background-color: #ffffff; /* Slightly brighter on hover */
+}
+
+.modal-body::-webkit-scrollbar-button:single-button {
+  display: block;
+  height: 16px;
+  width: 12px;
+}
+
+/* Firefox scrollbar styling */
+.modal-body {
+  scrollbar-width: thin;
+  scrollbar-color: #f0e5d8 transparent;
+}
+
+
+
+.modal-footer {
+  border-top: none;
+}
+
+.menu-category {
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  color: white;
+
+}
+
+.menu-section {
+  padding: 50px 0;
+  background-color: #f8f9fa;
+}
+
+.modal-body li {
+  margin-bottom: 8px; /* Adjust the value to increase or decrease spacing */
+  text-align: left; /* Ensure menu items stay left-aligned */
+}
+
+/* Ensure menu item buttons are left-aligned and don't center when wrapping */
+.modal-body li .btn,
+.modal-body li button {
+  text-align: left !important;
+  display: block;
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  font-size: 1rem !important; /* Prevent font size changes on click */
+}
+
+/* Prevent centering on multi-line menu items */
+.modal-body .list-unstyled li {
+  text-align: left !important;
+}
+
+.menu-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.select-dish-text {
+  font-style: italic;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  margin-top: -10px; /* Reduce distance from top */
+}
+
+.menu-category h3 {
+  margin-top: 20px;
+  font-size: 1.75rem;
+  color: #343a40;
+}
+
+.menu-category p {
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.menu-category ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu-category ul li {
+  font-size: 1.2rem;
+  padding: 5px 0;
+}
+
+.menu-selector-modal {
+  max-height: 90vh;
+  margin-top: 2%;
+  font-size: 1pt;
+}
+
+.menu-selector-modal .modal-dialog {
+  max-height: 70vh; /* Set the maximum height to 70% of the viewport height */
+  margin-top: 5%;
+}
+
+.menu-selector-modal .modal-body {
+  overflow-y: auto; /* Ensure content scrolls if it exceeds the max height */
+  padding: 20px;
+}
+
+.menu-selector-overlay {
+  max-width: 600px; /* Reduce the overall width */
+  max-height: 80vh; /* Limit the height to 80% of the viewport height */
+  overflow-y: auto; /* Add scrolling if content exceeds height */
+  background-color: #f4f1e4; /* Consistent background color */
+  padding: 10px; /* Padding inside the modal */
+  border-radius: 10px; /* Rounded corners */
+}
+
+
+.menu-selector-overlay ul {
+  list-style: none;
+  padding: 0;
+    padding-left: 20px; /* Reduce left padding of lists */
+    margin-bottom: 20px; /* Add space between list items */
+}
+
+.menu-selector-overlay li {
+  margin-bottom: 15px; /* Increase spacing between menu items */
+  font-size: 1.2rem;
+  line-height: 1.6; /* Add line height for better readability */
+}
+
+.menu-selector-overlay li ul {
+  margin-left: 20px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5; /* Consistent line height for nested items */
+}
+
+.menu-selector-overlay .modal-header, 
+.menu-selector-overlay .modal-footer {
+  padding: 10px; /* Reduce padding in header and footer */
+}
+
+.menu-selector-overlay .modal-body {
+  padding: 15px; /* Reduce padding in the body */
+}
+
+/* Menu Item Hover */
+.menu-select-overlay-col:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Light glow on hover */
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.menu-selector-overlay h3 {
+  font-size: 1.5rem; /* Slightly smaller heading size */
+  margin-bottom: 15px;
+}
+
+.about-us-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px; /* Optional: Adds a bit of space above the image */
+}
+
+.about-us-section {
+  padding: 50px 0;
+  background-color: #f8f9fa;
+  color: black;
+}
+
+.about-us-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-us-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.about-us-section img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px; /* Optional: Adds a bit of space above the image */
+  }
+  
+
+
+ 
+
+.contact-us-section {
+  padding: 50px 0;
+  background-color: #f8f9fa;
+}
+
+.contact-us-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.contact-us-section h4 {
+  margin-bottom: 20px;
+}
+
+.contact-us-section .form-control {
+  margin-bottom: 20px;
+}
+
+.map-placeholder {
+  margin-top: 20px;
+}
+
+.map-placeholder img {
+  width: 100%;
+  border-radius: 5px;
+}
+/* The x */
+.custom-close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #f0e5d8; /* Your desired color */
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto; /* Aligns the button to the right */
+  transition: transform 0.2s ease, color 0.2s ease;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.custom-close-button:hover {
+  color: #ffffff; /* Optional: Change color on hover */
+  transform: rotate(90deg) scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+.vertical-column {
+  background-color: #2b2b2b;
+  background-image: url(../public/images/5.png);
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #f0e5d8;
+  padding: 50px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  flex: 0 0 300px;
+  /* border: 2px solid #f0e5d8; */
+  /* border-radius: 10px; */
+  box-sizing: border-box;
+  height: 93vh;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.vertical-column p {
+  line-height: 1em;
+  /* text-align: left; */
+}
+
+
+.bar-name {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.bar-name .large-text {
+  font-size: 2em;
+}
+
+/* Keep Bothams title within vertical column */
+.vertical-column .bar-name .large-text {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  display: block;
+}
+
+.bar-name .small-text {
+  font-size: 1em;
+}
+
+.underline {
+  text-decoration: underline;
+  /* text-decoration-style: wavy; */
+  font-family: "Cabin Sketch", sans-serif;
+  font-size: 1.2rem;
+  color: #f0e5d8; /* Off-white color */
+  margin-top: 10px;
+}
+
+.bar-blurb {
+  font-family: "Cabin Sketch", sans-serif;
+  font-size: 1.2rem;
+  color: #f0e5d8; /* Off-white color */
+  margin-top: 10px;
+}
+
+.main-layout {
+  display: flex;
+  align-items: flex-start; 
+  /* padding: 20px; */
+
+}
+
+/* Tablet / iPad: vertical column reaches full page height (not applied on mobile) */
+@media (min-width: 577px) and (max-width: 991px) {
+  .vertical-column {
+    min-height: 100vh;
+    height: 100vh;
+  }
+}
+
+.content-area {
+  flex: 1;
+  margin-left: -300px; /* Negative margin to pull the Hero over the full width */
+}
+
+@media (min-width: 992px) {
+  /* Lock down modal width on desktop to prevent resizing when tabs are clicked */
+  .modal {
+    --bs-modal-width: 800px !important;
+  }
+
+  .modal-dialog {
+    width: 800px !important;
+    max-width: 800px !important;
+    min-width: 800px !important;
+  }
+
+  .modal-dialog.modal-lg,
+  .modal-lg .modal-dialog {
+    width: 800px !important;
+    max-width: 800px !important;
+    min-width: 800px !important;
+    --bs-modal-width: 800px !important;
+  }
+
+  .modal-lg, .modal-xl {
+      margin-top: 3%;
+      --bs-modal-width: 800px;
+  }
+  /* Ensure all modals (menu, about, contact) have the same top margin on desktop */
+  .modal-dialog.centered,
+  .modal-dialog {
+    margin-top: 3% !important;
+    margin-bottom: 5%;
+  }
+  
+  /* Override Bootstrap's centered class transform to use fixed margin instead of centering */
+  .modal.show .modal-dialog.centered {
+    transform: translateY(0) !important;
+    margin-top: 3% !important;
+    margin-bottom: auto !important;
+  }
+  
+  /* Ensure non-centered modals also get the same margin */
+  .modal.show .modal-dialog:not(.centered) {
+    margin-top: 3% !important;
+    margin-bottom: auto !important;
+    transform: translateY(0) !important;
+  }
+  
+  /* Make modal body taller on desktop to show images properly */
+  .modal-body {
+    min-height: 60vh;
+    max-height: 75vh;
+  }
+  
+  /* Ensure images display properly in modals */
+  .about-us-image,
+  .modal-body img {
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Specific height for about and contact modals to show images */
+  .overlay-modal .modal-body {
+    min-height: 60vh;
+    max-height: 75vh;
+  }
+
+  .modal-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* Prevent Container from affecting modal width on desktop */
+  .modal-body .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+
+@media (max-width: 576px) {
+  /* Galaxy/Android: use dynamic viewport height so no white space at bottom */
+  html, body {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  body {
+    background-size: cover !important;
+    background-attachment: scroll; /* Prevents background resizing/expanding when scrolling on mobile */
+    background-color: #1a1a1a; /* Fallback if image doesn't reach edge (e.g. Galaxy) - no white */
+  }
+
+  .vertical-column {
+    max-width: 90%; /* Allow the column to take up more space on small screens */
+    margin: 0 auto; /* Center it horizontally */
+    margin-top: 5vh; /* Reduced top margin to move it up */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+    padding: 50px;
+    width: 90%; /* Fixed width to prevent changes */
+    /* margin-right: 20px; Space between the column and the hero section */
+    border: 2px solid #f0e5d8; /* White border matching the font color */
+    border-radius: 10px; /* Rounded edges */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's width and height */
+    height: 82vh;
+  }
+
+  .content-area {
+    margin-left: 0; /* Remove negative margin on mobile */
+  }
+
+  .main-layout {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+
+  /* Make modal take up 90% of screen width on mobile - wider than before */
+  .modal {
+    --bs-modal-width: 90vw !important;
+  }
+
+  .modal-dialog {
+    width: 90vw !important;
+    max-width: 90vw !important;
+    min-width: 90vw !important;
+    margin: 1.75rem auto;
+  }
+
+  /* Ensure modal-lg doesn't override our mobile width */
+  .modal-dialog.modal-lg,
+  .modal-lg .modal-dialog {
+    width: 90vw !important;
+    max-width: 90vw !important;
+    min-width: 90vw !important;
+    --bs-modal-width: 90vw !important;
+  }
+
+  .modal-content {
+    background-color: #3a2a2a;  /* Darker background for better text contrast (halfway between original and very dark) */
+    background-image: url('../public/pizzafire.JPG'); /* Path to your chalk texture */
+    background-size: cover; /* Use cover to maintain aspect ratio */
+    background-position: center;
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-blend-mode: multiply; /* Blend the image with the background color */
+    color: #f0e5d8; /* Off-white text */
+    font-family: "Tinos", serif;
+    border-radius: 10px;
+    width: 100% !important; /* Fixed width to prevent changes */
+    max-width: 100% !important;
+    min-width: 100% !important; /* Prevent width from shrinking */
+    margin: 0 auto;
+    padding: 0px;
+    min-height: 400px; /* Fixed minimum height to prevent size changes */
+    box-sizing: border-box;
+    position: relative; /* For overlay positioning */
+  }
+
+  /* Add dark overlay to further darken the background on mobile */
+  .modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Dark overlay - reduced to 20% black (half strength) */
+    border-radius: 10px; /* Match modal border radius */
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 0;
+  }
+
+  /* Ensure content is above the overlay on mobile */
+  .modal-content > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .modal-body {
+    height: 75vh; /* Use 75% of viewport height for better mobile experience */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+  }
+  
+  /* Ensure menu items stay left-aligned on mobile */
+  .modal-body li .btn,
+  .modal-body li button {
+    text-align: left !important;
+    display: block;
+    width: 100%;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 1rem !important; /* Prevent font size changes on click */
+  }
+  
+  .modal-body .list-unstyled li {
+    text-align: left !important;
+  }
+  
+  /* Prevent font size changes on menu item buttons when clicked on mobile */
+  .modal-body li .btn:active,
+  .modal-body li .btn:focus,
+  .modal-body li button:active,
+  .modal-body li button:focus {
+    font-size: 1rem !important;
+    transform: none !important;
+  }
+
+  /* Prevent Container from affecting modal width */
+  .modal-body .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+
+  /* Menu modal specific styling on mobile - cream background, black text, no background image */
+  .menu-modal .modal-content {
+    background-color: #faf8f3; /* Cream background */
+    background-image: none; /* Remove background image */
+    color: #000000; /* Black text */
+    font-family: "Tinos", serif;
+    border: 2px solid #e8e4d9; /* Elegant subtle border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+
+  .menu-modal .modal-content::before {
+    display: none; /* Remove overlay */
+  }
+
+  .menu-modal .custom-close-button {
+    color: #000000; /* Black close button */
+  }
+
+  .menu-modal .custom-close-button:hover {
+    color: #333333; /* Darker on hover */
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-modal .modal-body li .btn,
+  .menu-modal .modal-body li button {
+    color: #000000 !important; /* Black text for menu items */
+  }
+
+  .menu-modal .modal-body .text-center {
+    color: #000000 !important; /* Black text for descriptions */
+  }
+
+  .menu-modal .nav-tabs .nav-link {
+    color: #000000 !important; /* Black text for tabs */
+  }
+
+  .menu-modal .nav-tabs .nav-link.active {
+    color: #000000 !important; /* Black text for active tab */
+  }
+
+
+/* Took this out for contact page map. Not sure why it was here. */
+/* .modal {
+--bs-modal-padding: 0rem;
+} */
+
+  
+
+
+
+}
