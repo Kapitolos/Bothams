@@ -1,0 +1,13 @@
+{
+  "short_name": "Bothams",
+  "name": "Bothams - Bar & Restaurant",
+  "icons": [
+    {"src": "favicon.svg", "sizes": "any", "type": "image/svg+xml"},
+    {"src": "logo.jpg", "sizes": "192x192", "type": "image/jpeg"},
+    {"src": "logo.jpg", "sizes": "512x512", "type": "image/jpeg"}
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2b2b2b",
+  "background_color": "#f4f1e4"
+}
